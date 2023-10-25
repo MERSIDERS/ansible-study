@@ -1,0 +1,27 @@
+---
+- name: Подготовка нового сервера
+  hosts: test 
+  become: yes  # Выполнять задачи с правами суперпользователя (sudo)
+
+  tasks:
+    - name: Отключение IPv6
+      sysctl:
+        name: net.ipv6.conf.all.disable_ipv6
+        value: "1" # Заключение в кавычки, чтобы сохранить тип данных как строка
+        state: present  # Убедитcя, что параметр существует и равен 1
+      become: yes
+
+    - name: Установка часового пояса (Europe/Kiev)
+      command: timedatectl set-timezone Europe/Kiev
+      become: yes
+
+    - name: Обновление списка пакетов
+      apt:
+        update_cache: yes
+      become: yes
+
+    - name: Установка Nginx
+      apt:
+        name: nginx
+        state: present
+      become: yes
