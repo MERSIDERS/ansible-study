@@ -30,3 +30,9 @@ all:
       ansible_sudo_pass: 1
 ```
 You can use arbitrary names like test and node1 for your hosts.
+
+
+The command to run:
+```shell
+ansible-playbook -i inventory.yml proxy-ipv4-kiev.yml
+```
