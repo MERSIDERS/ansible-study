@@ -1,3 +1,0 @@
-- name: Установка часового пояса (Europe/Kiev)
-  command: timedatectl set-timezone Europe/Kiev
-  become: yes

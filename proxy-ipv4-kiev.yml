@@ -2,6 +2,4 @@
 - name: Подготовка нового сервера
   hosts: test 
   roles:
-    - timezone
-    - ipv6
     - nginx
