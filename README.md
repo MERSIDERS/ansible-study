@@ -37,7 +37,8 @@ The command to run:
 ansible-playbook -i inventory.yml proxy-ipv4-kiev.yml
 ```
 
-Using vars.yml to Control Task Execution
+### Control Task Execution
+Using vars.yml to Control Task Execution.
 The vars.yml file is designed to allow users to control which tasks are executed in the playbook. It contains variables that determine whether a task should be executed or skipped. To configure the vars.yml file, follow these steps:
 1. Open the vars.yml file in a text editor.
 2. In vars.yml, you will find a set of variables with corresponding task names, for example:
