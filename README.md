@@ -36,3 +36,18 @@ The command to run:
 ```shell
 ansible-playbook -i inventory.yml proxy-ipv4-kiev.yml
 ```
+
+Using vars.yml to Control Task Execution
+The vars.yml file is designed to allow users to control which tasks are executed in the playbook. It contains variables that determine whether a task should be executed or skipped. To configure the vars.yml file, follow these steps:
+1. Open the vars.yml file in a text editor.
+2. In vars.yml, you will find a set of variables with corresponding task names, for example:
+```shell
+enable_disable_tasks:
+  disable_ipv6: true
+  set_timezone: true
+  update_packages: true
+  install_nginx: true
+```
+3. To enable a task, set the corresponding variable to true. To disable a task, set it to false.
+4. Save the vars.yml file after making your changes.
+Now, when you run your playbook, it will check the values in vars.yml to determine which tasks to execute. If a variable is set to true, the corresponding task will be executed; if set to false, the task will be skipped.

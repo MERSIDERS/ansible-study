@@ -3,19 +3,23 @@
     name: net.ipv6.conf.all.disable_ipv6
     value: "1" # Заключение в кавычки, чтобы сохранить тип данных как строка
     state: present  # Убедитcя, что параметр существует и равен 1
+  when: enable_disable_tasks.disable_ipv6
   become: yes
 
 - name: Установка часового пояса (Europe/Kiev)
   command: timedatectl set-timezone Europe/Kiev
+  when: enable_disable_tasks.set_timezone
   become: yes
 
 - name: Обновление списка пакетов
   apt:
     update_cache: yes
+  when: enable_disable_tasks.update_packages
   become: yes
 
 - name: Установка Nginx
   apt:
     name: nginx
     state: present
+  when: enable_disable_tasks.install_nginx
   become: yes

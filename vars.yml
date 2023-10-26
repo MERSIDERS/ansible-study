@@ -1,0 +1,7 @@
+---
+enable_disable_tasks:
+  disable_ipv6: false
+  set_timezone: false
+  update_packages: true
+  install_nginx: true
+
