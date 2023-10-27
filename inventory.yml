@@ -5,9 +5,9 @@ all:
       ansible_user: mersiders
       ansible_ssh_pass: 1
       ansible_sudo_pass: 1
-        #node1:
-        #ansible_host: 172.16.0.68
-        #ansible_user: mersiders
-        #ansible_ssh_pass: 1
-        #ansible_sudo_pass: 1
+    node1:
+      ansible_host: 172.16.0.68
+      ansible_user: mersiders
+      ansible_ssh_pass: 1
+      ansible_sudo_pass: 1
 
