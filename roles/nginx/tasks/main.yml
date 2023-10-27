@@ -23,3 +23,16 @@
     state: present
   when: enable_disable_tasks.install_nginx
   become: yes
+
+- name: Генерация самоподписанного SSL-сертификата
+  command: openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=UA/ST=Ukraine/L=Kiev/O=Organization/CN=localhost"
+  when: enable_disable_tasks.generate_ssl_cert
+  become: yes
+
+- name: Настройка Nginx с самоподписанным сертификатом
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify: Reload Nginx
+  when: enable_disable_tasks.configure_nginx
+  become: yes

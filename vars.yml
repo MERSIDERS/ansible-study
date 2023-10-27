@@ -1,7 +1,8 @@
 ---
 enable_disable_tasks:
-  disable_ipv6: false
-  set_timezone: false
+  disable_ipv6: true
+  set_timezone: true
   update_packages: true
   install_nginx: true
-
+  generate_ssl_cert: true
+  configure_nginx: true
