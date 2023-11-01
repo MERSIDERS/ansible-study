@@ -1,7 +1,21 @@
 ---
+#Отключение\Включение задач
 enable_disable_tasks:
-  disable_ipv6: false
-  set_timezone: false
+    # Отключение IPv6
+  disable_ipv6: true 
+    # Установка часового пояcа
+  set_timezone: true
+    # Установка Nginx
   update_packages: true
   install_nginx: true
+    # Самоподписанный сертификат
+  generate_ssl_cert: false
+  configure_nginx: false
+    # Let's Encrypt
+  letsencrypt: true
 
+
+
+# Переменные
+domain: hdf083cjnt9.sn.mynetname.net
+email: mersiders@gmail.com

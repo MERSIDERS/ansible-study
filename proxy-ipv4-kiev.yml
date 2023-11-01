@@ -1,7 +1,0 @@
----
-- name: Подготовка нового сервера
-  hosts: all
-  vars_files:
-    - vars.yml 
-  roles:
-    - nginx

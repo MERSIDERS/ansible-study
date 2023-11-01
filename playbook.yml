@@ -1,0 +1,14 @@
+---
+- name: Подготовка нового сервера
+  hosts: test 
+  vars_files:
+    - vars.yml 
+  roles:
+    - nginx
+    - ssl
+  handlers:
+    - name: Reload Nginx
+      become: yes
+      service:
+        name: nginx
+        state: restarted

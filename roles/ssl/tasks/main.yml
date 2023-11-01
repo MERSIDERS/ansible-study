@@ -1,0 +1,10 @@
+- name: Установка Let's Encrypt (plugin nginx for certbot)
+  apt:
+    name: python3-certbot-nginx
+  when: enable_disable_tasks.letsencrypt
+  become: yes
+
+- name: Установка SSL-сертификата
+  command: certbot --nginx -m {{ email }} -d {{ domain  }} --agree-tos --staging 
+  when: enable_disable_tasks.letsencrypt
+  become: yes
