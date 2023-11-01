@@ -1,8 +1,14 @@
 ---
 enable_disable_tasks:
-  disable_ipv6: true
+    # Отключение IPv6
+  disable_ipv6: true 
+    # Установка часового пояcа
   set_timezone: true
+    # Установка Nginx
   update_packages: true
   install_nginx: true
-  generate_ssl_cert: true
-  configure_nginx: true
+    # Самоподписанный сертификат
+  generate_ssl_cert: false
+  configure_nginx: false
+    # Let's Encrypt
+  letsencrypt: true

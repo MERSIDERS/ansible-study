@@ -5,6 +5,7 @@
     - vars.yml 
   roles:
     - nginx
+    - ssl
   handlers:
     - name: Reload Nginx
       become: yes
