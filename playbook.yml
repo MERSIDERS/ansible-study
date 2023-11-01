@@ -1,6 +1,6 @@
 ---
 - name: Подготовка нового сервера
-  hosts: all
+  hosts: test 
   vars_files:
     - vars.yml 
   roles:

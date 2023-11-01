@@ -1,4 +1,5 @@
 ---
+#Отключение\Включение задач
 enable_disable_tasks:
     # Отключение IPv6
   disable_ipv6: true 
@@ -12,3 +13,9 @@ enable_disable_tasks:
   configure_nginx: false
     # Let's Encrypt
   letsencrypt: true
+
+
+
+# Переменные
+domain: hdf083cjnt9.sn.mynetname.net
+email: mersiders@gmail.com

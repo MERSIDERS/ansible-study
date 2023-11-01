@@ -5,6 +5,6 @@
   become: yes
 
 - name: Установка SSL-сертификата
-  command: certbot --nginx -m mersiders@gmail.com -d hdf083cjnt9.sn.mynetname.net --agree-tos 
+  command: certbot --nginx -m {{ email }} -d {{ domain  }} --agree-tos --staging 
   when: enable_disable_tasks.letsencrypt
   become: yes
